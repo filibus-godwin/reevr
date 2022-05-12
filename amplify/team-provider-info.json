@@ -1,0 +1,15 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-reevr-dev-20631-authRole",
+      "UnauthRoleArn": "arn:aws:iam::852527811558:role/amplify-reevr-dev-20631-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::852527811558:role/amplify-reevr-dev-20631-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-reevr-dev-20631-deployment",
+      "UnauthRoleName": "amplify-reevr-dev-20631-unauthRole",
+      "StackName": "amplify-reevr-dev-20631",
+      "StackId": "arn:aws:cloudformation:us-east-1:852527811558:stack/amplify-reevr-dev-20631/d8a6b520-98fb-11ec-9f0c-127ffd65e029",
+      "AmplifyAppId": "d3nelae1qipx0k"
+    }
+  }
+}
