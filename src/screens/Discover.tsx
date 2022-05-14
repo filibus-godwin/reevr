@@ -1,5 +1,5 @@
 import React from 'react';
-import {FlatList, FlatListProps, StyleSheet, View} from 'react-native';
+import {FlatList, FlatListProps, StyleSheet} from 'react-native';
 import {SearchBar} from '../components/SearchBar';
 import {Spacer} from '../components/Spacer';
 import {BaseContainer} from '../components/Themed';

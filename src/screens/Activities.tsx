@@ -1,5 +1,5 @@
 import React from 'react';
-import {ScrollView, StyleSheet, View} from 'react-native';
+import {ScrollView, StyleSheet} from 'react-native';
 import {Follows} from '../components/activities/follows';
 import {Mentions} from '../components/activities/mentions';
 import {Reactions} from '../components/activities/reactions';
@@ -9,7 +9,6 @@ import {BaseContainer} from '../components/Themed';
 import {RootStackScreenProps} from '../types';
 
 export const ActivitiesScreen: React.FC<RootStackScreenProps<'Activities'>> = ({
-  route,
   navigation,
 }) => {
   return (

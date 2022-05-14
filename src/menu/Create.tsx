@@ -6,7 +6,6 @@ import {Spacer} from '../components/Spacer';
 import {TouchableImage} from '../components/TouchableImage';
 import {RootStackScreenProps} from '../types';
 import {launchCamera, launchImageLibrary} from 'react-native-image-picker';
-// import CameraRoll from '@react-native-community/cameraroll';
 import {Touchable} from '../components/Touchable';
 import {Info} from '../components/Text';
 import {FastImageProps} from 'react-native-fast-image';

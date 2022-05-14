@@ -1,12 +1,10 @@
 import React from 'react';
-import {StyleSheet, View} from 'react-native';
+import {StyleSheet} from 'react-native';
 import {ScrollView} from 'react-native-gesture-handler';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import {Appbar} from '../components/Appbar';
 import {Pair} from '../components/contest/Pair';
 import {Column} from '../components/Layout';
-import {Spacer} from '../components/Spacer';
-import {Body, Info, Title} from '../components/Text';
 import {BaseContainer} from '../components/Themed';
 import {RootStackScreenProps} from '../types';
 
@@ -23,27 +21,6 @@ export const OngoingContestScreen: React.FC<
       <BaseContainer style={[styles.base]}>
         <ScrollView>
           <Column style={{paddingHorizontal: 15}}>
-            {/* <Spacer height={20} /> */}
-            {/* <Title style={{fontSize: 30, fontWeight: '300'}}>Welcome to</Title>
-            <Title style={{fontSize: 50, marginTop: 0, lineHeight: 50}}>
-              Battle Royale 01
-            </Title> */}
-            {/* <Body>The Bloody Bloody Mary Edition</Body> */}
-            {/* <Spacer height={10} /> */}
-            {/* <Body style={{fontSize: 20, fontWeight: '300'}}>
-              Watch as 100 Contestants battle for
-            </Body>
-            <Body style={{fontSize: 30, fontWeight: '300', lineHeight: 30}}>
-              USD 500
-            </Body> */}
-
-            {/* <Spacer height={10} /> */}
-            {/* <Body>
-              All entries depict the artists portrayal of the specified.
-            </Body> */}
-            {/* <Spacer height={20} /> */}
-            {/* <Info>Voting ends in 23HRS</Info>
-            <Info>Voting ends in 23HRS</Info> */}
           </Column>
           <Pair
             pair={[

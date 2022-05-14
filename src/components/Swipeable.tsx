@@ -1,9 +1,8 @@
 import React from 'react';
-import {Dimensions, StyleSheet, View} from 'react-native';
+import {Dimensions, StyleSheet} from 'react-native';
 import {
   PanGestureHandler,
   PanGestureHandlerGestureEvent,
-  NativeGesture,
 } from 'react-native-gesture-handler';
 import Animated, {
   Extrapolate,
@@ -15,7 +14,6 @@ import Animated, {
   withSpring,
 } from 'react-native-reanimated';
 import {VoidFunction} from '../types';
-import {Spacer} from './Spacer';
 
 type Props = {
   onThresholdReached?: VoidFunction;
@@ -45,6 +43,7 @@ export const Swipeable: React.FC<Props> = ({
       ],
     };
   });
+  
   const leftActionstyle = useAnimatedStyle(() => {
     return {
       transform: [

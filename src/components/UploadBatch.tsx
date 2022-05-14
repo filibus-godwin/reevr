@@ -8,9 +8,9 @@ import {IconButton} from './IconButton';
 import {useTheme} from '../hooks/useTheme';
 import {MediaAsset, Post, VoidFunction} from '../types';
 import {TouchableImage} from './TouchableImage';
-import Animated, {SlideInLeft} from 'react-native-reanimated';
 import {UploadManager} from '../client/upload.manager';
 import {usePostHandler} from '../shared-hooks/usePostHandler';
+import Animated, {SlideInLeft} from 'react-native-reanimated';
 
 type Props = {
   onPressClose?: VoidFunction;

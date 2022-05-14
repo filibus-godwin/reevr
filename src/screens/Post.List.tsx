@@ -1,5 +1,5 @@
 import React from 'react';
-import {FlatList, FlatListProps, StyleSheet, View} from 'react-native';
+import {FlatList, FlatListProps, StyleSheet} from 'react-native';
 import {Appbar} from '../components/Appbar';
 import {PostCard} from '../components/feed_card';
 import {BaseContainer} from '../components/Themed';
@@ -8,17 +8,16 @@ import {RootStackScreenProps} from '../types';
 
 export const PostListScreen: React.FC<RootStackScreenProps<'PostList'>> = ({
   navigation,
-  route,
 }) => {
   const onPressName = () => navigation.navigate('UserProfile', {userId: ''});
-  const onPressMenu = () => navigation.navigate('PostCardMenu', {postId: ''});
+  const onPressMenu = () => navigation.navigate('PostCardMenu', {authorId : '', postId:''});
+  const onPressImage = () => navigation.navigate('ExpandedPost', {postId: ''});
   const onPressLike = () => navigation.navigate('Sandbox');
+  const onPressComment = () => 
+    navigation.navigate('Comments', {postId: ''});
+    
   const onPressShare = () => {};
   const onPressBookmark = () => {};
-  const onPressComment = () => {
-    navigation.navigate('Comments', {postId: ''});
-  };
-  const onPressImage = () => navigation.navigate('ExpandedPost', {postId: ''});
 
   const feedData = getFeedData({
     onPressImage,

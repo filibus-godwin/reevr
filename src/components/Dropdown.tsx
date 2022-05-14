@@ -8,7 +8,7 @@ import {
 } from 'react-native';
 import {useTheme} from '../hooks/useTheme';
 import {ListItem} from './ListItem';
-import {Body, Info} from './Text';
+import {Body} from './Text';
 import {useAppDimensions} from '../constants/dim';
 import {BaseContainer, ElevatedContainer, ThemedMaterialIcons} from './Themed';
 import {Row} from './Layout';

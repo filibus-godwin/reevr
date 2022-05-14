@@ -1,5 +1,6 @@
 import React from 'react';
-import {StyleSheet, Touchable, View, ViewProps} from 'react-native';
+import {StyleSheet, View, ViewProps} from 'react-native';
+import {ThemedMaterialCommunityIcons} from './Themed';
 import {ms} from 'react-native-size-matters';
 import {useTheme} from '../hooks/useTheme';
 import {VoidFunction} from '../types';
@@ -8,7 +9,6 @@ import {CircleAvatar} from './CircleAvatar';
 import {Row} from './Layout';
 import {Spacer} from './Spacer';
 import {Body, Title} from './Text';
-import {ThemedMaterialCommunityIcons} from './Themed';
 
 type Props = {
   source: React.ComponentProps<typeof CircleAvatar>['imageProps']['source'];
@@ -25,7 +25,6 @@ export const User: React.FC<Props> = ({
   onPressRemove,
   ...props
 }) => {
-  const {primary} = useTheme();
   return (
     <>
       <Row
@@ -66,6 +65,3 @@ export const User: React.FC<Props> = ({
   );
 };
 
-const styles = StyleSheet.create({
-  base: {},
-});

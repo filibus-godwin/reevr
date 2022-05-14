@@ -1,8 +1,7 @@
 import React from 'react';
-import {ScrollView, StyleSheet} from 'react-native';
-import {SafeAreaView, useSafeAreaInsets} from 'react-native-safe-area-context';
-import {Appbar} from '../components/Appbar';
+import {StyleSheet} from 'react-native';
 import {ExpandedFeedCard} from '../components/feed_card/expanded';
+import {Appbar} from '../components/Appbar';
 import {BaseContainer} from '../components/Themed';
 import {RootStackScreenProps} from '../types';
 
@@ -11,9 +10,8 @@ import {RootStackScreenProps} from '../types';
 export const ExpandedPostScreen: React.FC<
   RootStackScreenProps<'ExpandedPost'>
 > = ({navigation, route}) => {
-  const {bottom} = useSafeAreaInsets();
   const onPressName = () => navigation.navigate('UserProfile', {userId: ''});
-  const onPressMenu = () => navigation.navigate('PostCardMenu', {postId: ''});
+  const onPressMenu = () => navigation.navigate('PostCardMenu', {authorId:"",postId:""});
   const onPressLike = () => {};
   const onPressShare = () => {};
   const onPressBookmark = () => {};
@@ -54,15 +52,12 @@ Vestibulum nec tortor sapien. Duis rutrum vitae nisl quis malesuada. Nulla aucto
           media={[
             {
               uri: 'https://source.unsplash.com/random/23',
-              mimeType: 'image/png',
             },
             {
               uri: 'https://source.unsplash.com/random/19',
-              mimeType: 'image/png',
             },
             {
               uri: 'https://source.unsplash.com/random/0?woman,white',
-              mimeType: 'image/png',
             },
           ]}
         />

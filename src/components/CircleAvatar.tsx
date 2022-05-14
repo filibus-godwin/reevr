@@ -8,7 +8,6 @@ export const CircleAvatar: React.FC<Props> = ({size, imageProps, ...props}) => {
   const dim = size || 30;
   const {source, style, ...imProps} = imageProps;
   const {
-    // colors: {elevated},
   } = useTheme();
   return (
     <>
@@ -21,7 +20,6 @@ export const CircleAvatar: React.FC<Props> = ({size, imageProps, ...props}) => {
               width: dim,
               height: dim,
               borderRadius: dim / 2,
-              // backgroundColor: elevated,
             },
             style,
           ],

@@ -1,6 +1,5 @@
 import {Message} from '../components/message/message';
 
-const source1 = 'https://source.unsplash.com';
 export const ConversationData: React.ComponentProps<typeof Message>[] = [
   {
     messageId: '1',

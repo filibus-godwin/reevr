@@ -6,27 +6,20 @@ import {Spacer} from '../../components/Spacer';
 import {Body, Info, Title} from '../../components/Text';
 import {useTheme} from '../../hooks/useTheme';
 import {LoginStackScreenProps} from '../../types';
-import {useColorScheme} from '../../hooks/useColorScheme';
 import {BaseContainer} from '../../components/Themed';
 import {Row} from '../../components/Layout';
 
 export const WelcomeScreen: React.FC<LoginStackScreenProps<'Welcome'>> = ({
   navigation,
-  route,
 }) => {
-  const {primary, background} = useTheme();
-
-  const scheme = useColorScheme();
-  const isLight = scheme == 'light';
+  const {primary} = useTheme();
 
   const onPressLogin = () => navigation.navigate('Login');
   const onPressSignUp = () => navigation.navigate('SignUp');
-  // SystemNavigationBar.navigationHide();
   return (
     <>
       <BaseContainer style={styles.base}>
         <ImageBackground
-          //   source={{uri: 'https://source.unsplash.com/random/9?hero,superman'}}
           source={{
             uri: 'https://images.unsplash.com/photo-1578632767115-351597cf2477?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1374&q=80',
           }}

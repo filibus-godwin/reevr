@@ -1,8 +1,7 @@
 import React from 'react';
-import {StyleSheet, ViewStyle} from 'react-native';
+import {ViewStyle} from 'react-native';
 import {TouchableOpacity} from 'react-native-gesture-handler';
-import FastImage, {FastImageProps} from 'react-native-fast-image';
-import {useTheme} from '../hooks/useTheme';
+import {FastImageProps} from 'react-native-fast-image';
 import {Image} from './Themed';
 
 type TouchableImageProps = React.ComponentProps<typeof TouchableOpacity> & {
@@ -17,9 +16,6 @@ export const TouchableImage: React.FC<TouchableImageProps> = ({
   activeOpacity,
   ...props
 }) => {
-  const {
-    //  elevated
-  } = useTheme();
   const {style: imStyle, ...imProps} = imageProps;
   return (
     <>
@@ -31,7 +27,6 @@ export const TouchableImage: React.FC<TouchableImageProps> = ({
           style={[
             {
               flex: 1,
-              // backgroundColor: elevated,
             },
             imStyle,
           ]}
@@ -41,9 +36,3 @@ export const TouchableImage: React.FC<TouchableImageProps> = ({
     </>
   );
 };
-
-const styles = StyleSheet.create({
-  base: {
-    flex: 1,
-  },
-});

@@ -1,18 +1,15 @@
 import Color from 'color';
-import React, {Touch} from 'react';
+import React from 'react';
 import {
   StyleSheet,
-  Text,
   View,
-  TouchableOpacity,
   TouchableHighlight,
 } from 'react-native';
-import {Switch} from 'react-native-gesture-handler';
 import {withTheme} from '../constants/schemes';
 import {useColorScheme} from '../hooks/useColorScheme';
 import {Theme} from '../types';
 import {Spacer} from './Spacer';
-import {Body, Title} from './Text';
+import {Body} from './Text';
 import {Touchable} from './Touchable';
 
 type Props = {

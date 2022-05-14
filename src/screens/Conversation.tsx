@@ -12,7 +12,6 @@ import {Row} from '../components/Layout';
 import {BaseContainer} from '../components/Themed';
 
 /*
- 
   reply  behaviours
 
   when replying a text only message: first two lines of the text is attached to the reply

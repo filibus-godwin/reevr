@@ -5,7 +5,6 @@ import {getIconColor, withTheme} from '../constants/schemes';
 import {useColorScheme} from '../hooks/useColorScheme';
 import {Theme} from '../types';
 import {MaterialIcons} from './Icons';
-import {Circle} from 'react-native-progress';
 import {ThemedMaterialIcons} from './Themed';
 
 type Props = React.ComponentProps<typeof TouchableHighlight> &
@@ -28,7 +27,7 @@ export const IconButton: React.FC<Props> = ({
   ...props
 }) => {
   const dim = (size || 24) * 1.5;
-  const {text, onBackground, background} = withTheme(theme);
+  const {onBackground} = withTheme(theme);
   const mode = useColorScheme();
   const iconColor = getIconColor(mode, theme);
 

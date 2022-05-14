@@ -1,4 +1,4 @@
-import React, {useContext, useState} from 'react';
+import React, {useState} from 'react';
 import {StyleSheet, ToastAndroid, KeyboardAvoidingView} from 'react-native';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import {Appbar} from '../../components/Appbar';
@@ -25,7 +25,6 @@ export const LoginScreen: React.FC<LoginStackScreenProps<'Login'>> = ({
   const {top} = useSafeAreaInsets();
   const {primary} = useTheme();
   const [loading, setLoading] = useState(false);
-  const updateUser = useStore(state => state.updateUser);
   const dispatch = useAppDispatch();
   const axios = useAxiosInstance().axios;
 
@@ -60,21 +59,6 @@ export const LoginScreen: React.FC<LoginStackScreenProps<'Login'>> = ({
         console.warn(e);
         setLoading(false);
       });
-    // authManager
-    //   ?.login({email, password})
-    //   .then(e => {
-    //     // console.log(e.data);
-    //     // updateUser({
-    //     //   accessToken: e.data.accessToken,
-    //     //   refreshToken: e.data.refreshToken,
-    //     //   id: e.data.id,
-    //     //   streamToken: e.data.streamToken,
-    //     // });
-    //   })
-    //   .catch(e => {
-    //     console.warn(e);
-    //     setLoading(false);
-    //   });
   };
 
   return (

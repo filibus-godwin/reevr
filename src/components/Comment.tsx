@@ -1,5 +1,5 @@
 import React from 'react';
-import {ImageSourcePropType, StyleSheet, View} from 'react-native';
+import {StyleSheet, View} from 'react-native';
 import {CircleAvatar} from './CircleAvatar';
 import {Column} from './Layout';
 import {Spacer} from './Spacer';

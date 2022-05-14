@@ -1,7 +1,6 @@
 import React from 'react';
 import {
   FlatListProps,
-  StyleSheet,
   useWindowDimensions,
   FlatList,
   RefreshControl,
@@ -16,12 +15,10 @@ import {ProfilePicture} from '../components/profile/ProfilePicture';
 import {Spacer} from '../components/Spacer';
 import {BaseContainer, ElevatedContainer} from '../components/Themed';
 import {useScrollHandler} from '../hooks/useScrollHandler';
-import {Post, RootTabScreenProps, Profile} from '../types';
+import {Post, RootTabScreenProps} from '../types';
 import {useEphemeralStore} from '../store/ephemeralStore';
 import {useAppSelector} from '../srstore/rstore';
-import {useProfileHandler} from '../shared-hooks/useProfileHandler';
-import {usePostHandler} from '../shared-hooks/usePostHandler';
-import { getProfileData } from '../data/ProfileData';
+import {getProfileData} from '../data/ProfileData';
 
 // TODO Theme the Appbar iconbutton
 
@@ -30,33 +27,16 @@ const AnimatedFlatList =
 
 export const ProfileScreen: React.FC<RootTabScreenProps<'Profile'>> = ({
   navigation,
-  route,
 }) => {
   const credentials = useAppSelector(state => state.credentials);
-  const [refreshing, setRefreshing] = React.useState(false);
+  const [refreshing, _] = React.useState(false);
   const refreshProfileCount = useEphemeralStore(
     state => state.refreshProfileCount,
   );
   const [a, setA] = React.useState(0);
-  const {loadProfile} = useProfileHandler();
-  const {loadPosts} = usePostHandler();
 
   React.useEffect(() => {
-    // setRefreshing(true);
-    // loadProfile(credentials.id)
-    //   .then(e => {
-    //     if (e.status == 200) {
-    //       loadPosts(credentials.id, credentials.id).then(e => {
-    //         if (e.status == 200) {
-    //           setRefreshing(false);
-    //         }
-    //         return e;
-    //       });
-    //     }
-    //   })
-    //   .catch(e => {
-    //     setRefreshing(false);
-    //   });
+    
   }, [a, refreshProfileCount]);
 
 
@@ -75,14 +55,14 @@ export const ProfileScreen: React.FC<RootTabScreenProps<'Profile'>> = ({
     verified: false,
   };
 
-  const {width, height} = useWindowDimensions();
+  const {width} = useWindowDimensions();
   const {top} = useSafeAreaInsets();
 
   const onPressImage = () => navigation.navigate('ExpandedPost', {postId: ''});
-  const onPressMoreInfo = () => navigation.navigate('Sandbox');
-  const onPressEditProfile = () => navigation.navigate('EditProfile');
   const onPressLike = () => navigation.navigate('ExpandedPost', {postId: ''});
   const onPressComment = () => navigation.navigate('Comments', {postId: ''});
+  const onPressEditProfile = () => navigation.navigate('EditProfile');
+  const onPressMoreInfo = () => navigation.navigate('Sandbox');
   const onPressViewAll = () => navigation.navigate('Bookmarks');
   const onPressItem = () => navigation.navigate('Bookmarks');
   const onPressName = () => {};
@@ -159,7 +139,6 @@ export const ProfileScreen: React.FC<RootTabScreenProps<'Profile'>> = ({
             style={{
               paddingBottom: 10,
               backgroundColor: 'transparent',
-              // minHeight: 120,
             }}
             onPressViewAll={onPressViewAll}
             onPressItem={onPressItem}
@@ -240,8 +219,3 @@ export const ProfileScreen: React.FC<RootTabScreenProps<'Profile'>> = ({
   );
 };
 
-const styles = StyleSheet.create({
-  base: {
-    flex: 1,
-  },
-});

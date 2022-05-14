@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {StyleSheet, View} from 'react-native';
+import {View} from 'react-native';
 import {Row} from './Layout';
 import {Spacer} from './Spacer';
 import {Dropdown} from './Dropdown';

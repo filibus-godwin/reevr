@@ -6,15 +6,15 @@ import {Button} from '../../components/Button';
 import {CaptionedInput} from '../../components/CaptionedInput';
 import {DatePicker} from '../../components/DatePicker';
 import {CaptionedSection} from '../../components/Section';
-import {Spacer} from '../../components/Spacer';
-import {Info, Title} from '../../components/Text';
 import {BaseContainer} from '../../components/Themed';
-import {useTheme} from '../../hooks/useTheme';
+import {useAuth} from '../../shared-hooks/useAuth';
 import {LoginStackScreenProps} from '../../types';
+import {Info, Title} from '../../components/Text';
+import {Spacer} from '../../components/Spacer';
+import {useTheme} from '../../hooks/useTheme';
+import {useStore} from '../../store/store';
 import {Formik} from 'formik';
 import * as Yup from 'yup';
-import {useStore} from '../../store/store';
-import {useAuth} from '../../shared-hooks/useAuth';
 
 const DisplayingErrorMessagesSchema = Yup.object().shape({
   username: Yup.string()
@@ -35,12 +35,10 @@ const DisplayingErrorMessagesSchema = Yup.object().shape({
 
 export const SignUpScreen: React.FC<LoginStackScreenProps<'SignUp'>> = ({
   navigation,
-  route,
 }) => {
   const {primary} = useTheme();
 
   const [loading, setLoading] = useState(false);
-  const updateUser = useStore(state => state.updateUser);
   const toggleLoggedIn = useStore(state => state.toggleLoggedIn);
   const {register} = useAuth();
 
@@ -107,9 +105,7 @@ export const SignUpScreen: React.FC<LoginStackScreenProps<'SignUp'>> = ({
                 initialValues,
                 handleSubmit,
                 handleChange,
-                handleBlur,
                 errors,
-                touched,
               }) => (
                 <>
                   <>

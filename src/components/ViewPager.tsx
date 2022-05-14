@@ -1,5 +1,5 @@
-import React, {createRef, ReactNode, useState} from 'react';
-import {StyleSheet, View, ViewProps, ViewStyle} from 'react-native';
+import React, {createRef} from 'react';
+import {StyleSheet, ViewStyle} from 'react-native';
 import PagerView, {PagerViewProps} from 'react-native-pager-view';
 import {useSharedValue} from 'react-native-reanimated';
 import {PagerTab} from './PagerTab';
@@ -29,7 +29,6 @@ export const ViewPager: React.FC<Props> = ({
         onPressTab={onPressTab}
         style={[
           {
-            // marginHorizontal: 15,
             marginBottom: 5,
             alignSelf: 'flex-start',
           },

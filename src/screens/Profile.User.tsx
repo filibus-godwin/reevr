@@ -17,9 +17,8 @@ import {BaseContainer, ElevatedContainer} from '../components/Themed';
 import {useScrollHandler} from '../hooks/useScrollHandler';
 import {RootStackScreenProps} from '../types';
 import {usePostStore} from '../store/post.store';
-import {useStore} from '../store/store';
 import {useEphemeralStore} from '../store/ephemeralStore';
-import {PostResponseType, UserResponseType} from '../client/types';
+import {PostResponseType} from '../client/types';
 import {useProfileStore} from '../store/profile.store';
 
 const AnimatedFlatList =
@@ -48,16 +47,14 @@ export const UserProfileScreen: React.FC<
     state => state.refreshProfileCount,
   );
   const profiles = useProfileStore(state => state.profiles);
-  const addProfile = useProfileStore(state => state.addProfile);
-  const getProfile = useProfileStore(state => state.getProfile);
 
-  const [refreshing, setRefreshing] = React.useState(false);
+  const [refreshing, _] = React.useState(false);
   const [a, setA] = React.useState(0);
   const onPressImage = () => navigation.navigate('ExpandedPost', {postId: ''});
 
   const renderItem: React.ComponentProps<
     typeof AnimatedFlatList
-  >['renderItem'] = ({item, index}) => (
+  >['renderItem'] = ({item}) => (
     <PostCard
       location={route.params.userId}
       id={item.id}
@@ -86,17 +83,15 @@ export const UserProfileScreen: React.FC<
     />
   );
 
+  const onPressComment = () =>   navigation.navigate('Comments', {postId: ''});
   const onPressMoreInfo = () => navigation.navigate('Sandbox');
-
-  const onPressName = () => {};
-  const onPressMenu = () =>
-    navigation.navigate('PostCardMenu', {authorId: '', postId: ''});
   const onPressLike = () => navigation.navigate('ExpandedPost', {postId: ''});
+  const onPressMenu = () =>
+  navigation.navigate('PostCardMenu', {authorId: '', postId: ''});
   const onPressShare = () => {};
   const onPressBookmark = () => {};
-  const onPressComment = () => {
-    navigation.navigate('Comments', {postId: ''});
-  };
+  const onPressName = () => {};
+  
 
   const {
     onScroll,
@@ -112,27 +107,6 @@ export const UserProfileScreen: React.FC<
   const onPressImageMedia = () => navigation.navigate('MediaView');
 
   React.useEffect(() => {
-    setRefreshing(true);
-
-    // Api.profile
-    //   .loadProfile(route.params.userId)
-    //   .then(e => {
-    //     if (e.info.data) {
-    //       addProfile(route.params.userId, e.info.data);
-    //     }
-
-    //     if (e.posts.data) {
-    //       addPosts(
-    //         route.params.userId as string,
-    //         e.posts.data as PostResponseType[],
-    //       );
-    //       setRefreshing(false);
-    //     }
-    //   })
-    //   .catch(e => {
-    //     console.log(e);
-    //     setRefreshing(false);
-    //   });
   }, [a, refreshProfileCount]);
 
   const user = profiles[route.params.userId] ?? dummyData;

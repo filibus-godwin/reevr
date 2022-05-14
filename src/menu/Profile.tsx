@@ -19,6 +19,3 @@ export const ProfileMenuScreen: React.FC<
   );
 };
 
-const styles = StyleSheet.create({
-  base: {},
-});

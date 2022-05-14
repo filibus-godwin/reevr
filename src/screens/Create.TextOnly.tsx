@@ -1,5 +1,5 @@
 import {Formik} from 'formik';
-import React, {useContext, useState} from 'react';
+import React, { useState} from 'react';
 import {Keyboard, StyleSheet, TextInput} from 'react-native';
 import {Appbar} from '../components/Appbar';
 import {Spacer} from '../components/Spacer';

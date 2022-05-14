@@ -1,4 +1,4 @@
-import React, {useContext, useEffect} from 'react';
+import React, { useEffect} from 'react';
 import {FlatList, FlatListProps, StyleSheet, View} from 'react-native';
 import {Account} from '../components/Account';
 import {SearchBar} from '../components/SearchBar';
@@ -11,7 +11,6 @@ export const UserSearchScreen: React.FC<RootStackScreenProps<'UserSearch'>> = ({
   route,
 }) => {
   const users = useUserListStore(state => state.users);
-  const addUsers = useUserListStore(state => state.addUsers);
 
   useEffect(() => {
   }, []);

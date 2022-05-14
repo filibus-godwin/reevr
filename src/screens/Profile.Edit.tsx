@@ -1,6 +1,6 @@
 import {Formik} from 'formik';
 import React, {useEffect, useState} from 'react';
-import {Keyboard, StyleSheet, TextInput, View} from 'react-native';
+import {Keyboard, StyleSheet, View} from 'react-native';
 import {CircleSnail} from 'react-native-progress';
 import {UserResponseType} from '../client/types';
 import {Appbar} from '../components/Appbar';
@@ -10,7 +10,7 @@ import {ChangePicture} from '../components/profile/ProfilePicture';
 import {Spacer} from '../components/Spacer';
 import {BaseContainer} from '../components/Themed';
 import {useTheme} from '../hooks/useTheme';
-import {MediaAsset, RootStackScreenProps} from '../types';
+import {RootStackScreenProps} from '../types';
 import {launchImageLibrary} from 'react-native-image-picker';
 import {useEphemeralStore} from '../store/ephemeralStore';
 import {reevr} from '../client';

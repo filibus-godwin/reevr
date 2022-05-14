@@ -14,7 +14,7 @@ export const UploadManager: React.FC<Props> = ({style, ...props}) => {
 
   return (
     <>
-      <View style={styles.base} {...props}>
+      <View style={{}} {...props}>
         <FlatList
           inverted
           data={uploads}
@@ -34,6 +34,3 @@ export const UploadManager: React.FC<Props> = ({style, ...props}) => {
   );
 };
 
-const styles = StyleSheet.create({
-  base: {},
-});

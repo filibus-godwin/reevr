@@ -1,5 +1,5 @@
 import React from 'react';
-import {Share, StyleSheet, View} from 'react-native';
+import {StyleSheet, View} from 'react-native';
 import {Ad} from '../components/Ad';
 import {Appbar} from '../components/Appbar';
 import {BaseContainer} from '../components/Themed';

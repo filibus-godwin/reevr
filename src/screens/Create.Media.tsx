@@ -30,6 +30,8 @@ export const CreateMediaScreen: React.FC<
   const renderItem: FlatListProps<Asset>['renderItem'] = ({index, item}) => (
     <FastImage source={{uri: item.uri}} style={{width}} resizeMode="contain" />
   );
+
+  
   return (
     <>
       <Formik

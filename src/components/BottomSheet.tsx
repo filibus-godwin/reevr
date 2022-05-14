@@ -1,6 +1,6 @@
 import Color from 'color';
 import React from 'react';
-import {Pressable, StyleSheet, View, ViewProps} from 'react-native';
+import {Pressable, View, ViewProps} from 'react-native';
 import {withTheme} from '../constants/schemes';
 import {useColorScheme} from '../hooks/useColorScheme';
 import {Theme, VoidFunction} from '../types';
@@ -19,7 +19,6 @@ export const BottomSheet: React.FC<Props> = ({
   theme,
   ...props
 }) => {
-  const {surface, background} = withTheme(theme);
   const isDark = useColorScheme() == 'dark';
   const backgroundColor = isDark
     ? Color('#fff').darken(0.91).rgb().toString()

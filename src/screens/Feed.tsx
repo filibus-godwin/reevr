@@ -8,9 +8,8 @@ import {SuggestedContests} from '../components/SuggestedContests';
 import {BaseContainer} from '../components/Themed';
 import {MediaAsset, Post, RootTabScreenProps} from '../types';
 import {UploadManager} from '../components/UploadManager';
-import {useAppSelector} from '../srstore/rstore';
 import {usePostHandler} from '../shared-hooks/usePostHandler';
-import { getFeedData } from '../data/FeedData';
+import {getFeedData} from '../data/FeedData';
 
 export const FeedScreen: React.FC<RootTabScreenProps<'Feed'>> = ({
   navigation,
@@ -65,8 +64,6 @@ export const FeedScreen: React.FC<RootTabScreenProps<'Feed'>> = ({
     if (route.params.currentUploads.length > 0)
       setUploads([...uploads, route.params.currentUploads]);
   }, [route.params.currentUploads]);
-
-  const posts = useAppSelector(s => s.posts.posts['feed']);
 
   const feedData = getFeedData({onPressBookmark,onPressComment,onPressImage,onPressLike,onPressMenu,onPressName,onPressShare})
 

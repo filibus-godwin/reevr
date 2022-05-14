@@ -1,5 +1,5 @@
-import React, {useState} from 'react';
-import {StyleSheet, View, Switch, ColorValue} from 'react-native';
+import React from 'react';
+import { ColorValue} from 'react-native';
 import {useTheme} from '../hooks/useTheme';
 import {ThemedMaterialCommunityIcons} from './Themed';
 
@@ -7,8 +7,7 @@ export const ToggleButton: React.FC<{toggled?: boolean; size?: number}> = ({
   toggled,
   size,
 }) => {
-  const [toggledd, setToggled] = useState(false);
-  const {secondary, primary} = useTheme();
+  const {primary} = useTheme();
   return (
     <>
       {toggled ? (
@@ -24,16 +23,3 @@ export const ToggleButton: React.FC<{toggled?: boolean; size?: number}> = ({
   );
 };
 
-const styles = StyleSheet.create({
-  base: {
-    flexDirection: 'row',
-    // backgroundColor: 'red',
-    // borderWidth: 1,
-    // borderRadius: 15,
-    // width: 30,
-    // height: 30,
-    // justifyContent: 'center',
-    // alignItems: 'center',
-    // borderColor: 'white',
-  },
-});

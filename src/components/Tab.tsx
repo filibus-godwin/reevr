@@ -4,13 +4,10 @@ import {
   StyleSheet,
   Text,
   TouchableOpacity,
-  View,
   ViewProps,
 } from 'react-native';
 import {useTheme} from '../hooks/useTheme';
-import {VoidFunction} from '../types';
 import {ElevatedContainer} from './Themed';
-import {Touchable} from './Touchable';
 
 type Props = {
   tabs: string[];
@@ -30,7 +27,7 @@ export const Tabs: React.FC<Props> = ({
 }) => {
   const {primary, onBackground} = useTheme();
 
-  const backgroundColor = Color(onBackground).alpha(0.06).toString(); //'#eeeeee11';
+  const backgroundColor = Color(onBackground).alpha(0.06).toString();
 
   return (
     <>

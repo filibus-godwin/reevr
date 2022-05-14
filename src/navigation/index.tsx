@@ -45,8 +45,8 @@ import {Sandbox} from '../screens/Sandbox';
 import {UserSearchScreen} from '../screens/Search.User';
 import {Provider} from 'react-redux';
 import {rootstore, useAppDispatch, useAppSelector} from '../srstore/rstore';
-import encryptedStore from 'react-native-encrypted-storage';
 import {addCredentials, Credentials} from '../srstore/slices/credentials';
+import encryptedStore from 'react-native-encrypted-storage';
 
 export function App() {
   const mode = useColorScheme();

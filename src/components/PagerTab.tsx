@@ -1,13 +1,9 @@
-import React, {useCallback, useMemo, useState} from 'react';
-import Color from 'color';
+import React, {useCallback, useState} from 'react';
 import {
   StyleSheet,
-  TextProps,
-  TextStyle,
   TouchableOpacity,
   View,
   ViewProps,
-  ViewStyle,
 } from 'react-native';
 import Animated, {SharedValue} from 'react-native-reanimated';
 import {useTheme} from '../hooks/useTheme';

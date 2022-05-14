@@ -1,5 +1,5 @@
-import React, {useContext} from 'react';
-import {StyleSheet, View} from 'react-native';
+import React from 'react';
+import {StyleSheet} from 'react-native';
 import {BottomSheet} from '../components/BottomSheet';
 import {ListItem} from '../components/ListItem';
 import {useStore} from '../store/store';
@@ -12,7 +12,6 @@ export const PostCardMenuScreen: React.FC<
   const isPersonal = user.id == route.params.authorId;
 
   const onPressDelete = () => {
-    // post?.delete(route.params.postId);
   };
 
   return (

@@ -4,20 +4,13 @@ import PagerView, {PagerViewProps} from 'react-native-pager-view';
 import {useSharedValue} from 'react-native-reanimated';
 import {Appbar} from '../components/Appbar';
 import {Listing} from '../components/Listing';
-import {PagerTab} from '../components/PagerTab';
 import {BaseContainer} from '../components/Themed';
 import {ViewPager} from '../components/ViewPager';
 import {RootStackScreenProps} from '../types';
 
 export const AdsAndContestListScreen: React.FC<
   RootStackScreenProps<'AdAndContestList'>
-> = ({navigation, route}) => {
-  const offset = useSharedValue(0);
-  const position = useSharedValue(0);
-  const onPageScroll: PagerViewProps['onPageScroll'] = e => {
-    offset.value = e.nativeEvent.offset;
-    position.value = e.nativeEvent.position;
-  };
+> = ({navigation}) => {
 
   const onPressContest = () =>
     navigation.navigate('ContestInfo', {contestId: ''});

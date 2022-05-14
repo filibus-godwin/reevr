@@ -6,12 +6,10 @@ import {Comment} from '../components/Comment';
 import {IconButton} from '../components/IconButton';
 import {BaseContainer, ElevatedContainer} from '../components/Themed';
 import {getTextInputTextColor} from '../constants/schemes';
-import {useColorScheme} from '../hooks/useColorScheme';
 import {RootStackScreenProps} from '../types';
 
 export const CommentsScreen: React.FC<RootStackScreenProps<'Comments'>> = ({
   navigation,
-  route,
 }) => {
   const textColor = getTextInputTextColor();
   return (

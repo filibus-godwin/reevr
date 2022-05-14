@@ -1,14 +1,14 @@
 import Color from 'color';
 import React from 'react';
-import {View, ViewProps} from 'react-native';
+import FastImage from 'react-native-fast-image';
 import Animated from 'react-native-reanimated';
+import {ViewProps} from 'react-native';
 import {withTheme} from '../constants/schemes';
 import {useColorScheme} from '../hooks/useColorScheme';
 import {useTheme} from '../hooks/useTheme';
 import {Theme} from '../types';
-import {Ionicon, MaterialCommunityIcons, MaterialIcons} from './Icons';
-import FastImage from 'react-native-fast-image';
 import {Circle} from 'react-native-progress';
+import {Ionicon, MaterialCommunityIcons, MaterialIcons} from './Icons';
 
 const defaultIconSize = 24;
 

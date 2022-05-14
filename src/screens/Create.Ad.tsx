@@ -24,8 +24,6 @@ export const CreateAdScreen: React.FC<RootStackScreenProps<'CreateAd'>> = ({
   return (
     <>
       <Appbar.Header>
-        {/* <Appbar.BackAction onPress={navigation.goBack} />
-        <Appbar.Content title="Create an Ad" /> */}
         <Appbar.Action name="close" onPress={navigation.goBack} />
       </Appbar.Header>
       <BaseContainer style={styles.base}>

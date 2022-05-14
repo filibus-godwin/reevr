@@ -1,6 +1,5 @@
 import React from 'react';
 import {PostCard} from '../components/feed_card/index';
-import {VoidFunction} from '../types';
 
 export type ProfileData = React.ComponentProps<typeof PostCard> & {
   author: {profilePictureUrl: string; username: string};
